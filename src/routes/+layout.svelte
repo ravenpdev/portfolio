@@ -31,8 +31,10 @@
 		<section class="backdrop-blur mb-12 fixed top-0 w-full">
 			<nav
 				class="py-8 px-4 lg:px-10"
-				class:bg-black={windowYPosition > 50}
-				class:bg-opacity-40={windowYPosition > 50}
+				class:bg-cyan-500={windowYPosition > 50}
+				class:bg-opacity-5={windowYPosition > 50}
+				class:dark:bg-cyan-900={windowYPosition > 50}
+				class:dark:bg-opacity-50={windowYPosition > 50}
 			>
 				<div class="flex justify-between items-center">
 					<h1 class="text-xl font-semibold tracking-wide">
