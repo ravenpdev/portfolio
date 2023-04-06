@@ -1,2 +1,75 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+	import developerImg from '$lib/assets/dev.jpg';
+	import Icon from '@iconify/svelte';
+</script>
+
+<section class="min-h-screen px-4 py-24">
+	<div class="flex items-center mt-40 justify-center">
+		<div class="max-w-md text-center">
+			<h2 class="text-4xl md:text-5xl font-bold md:leading-snug md:tracking-wide">
+				<p>Programming</p>
+				<p>and Technologies</p>
+				<p>from the Future</p>
+			</h2>
+			<h3 class="text-lg mt-2 font-bold text-gray-500 uppercase tracking-wide">Web Developer</h3>
+			<!-- <p class="mt-2 text-gray-700 text-lg dark:text-gray-400" /> -->
+		</div>
+	</div>
+
+	<div class="mt-16 text-center">
+		<button class="border-2 p-3 hover:bg-cyan-500 hover:text-cyan-50 hover:border-cyan-500"
+			>Dig into my projects</button
+		>
+	</div>
+</section>
+
+<section class="bg-cyan-500 bg-opacity-10 flex flex-col lg:flex-row py-28 lg:py-48">
+	<div class="flex-1">
+		<img src={developerImg} alt="" />
+	</div>
+	<div class="flex-1 px-4 md:px-8 mt-20 lg:mt-0">
+		<h3 class="text-cyan-500 font-bold">ABOUT</h3>
+		<p class="text-4xl font-bold mt-4 text-gray-500">Developer</p>
+
+		<p class="mt-8 text-gray-700 dark:text-gray-400">
+			I'm Raven, a passionate freelancer bringing you the latest technologies from the future. I am
+			experienced in frontend and backend development.
+		</p>
+	</div>
+</section>
+
+<section class="flex flex-col lg:flex-row py-28 lg:py-48">
+	<div class="flex-1 px-4 lg:px-8 lg:mt-20">
+		<h3 class="text-cyan-500 font-bold">CONTACT</h3>
+		<p class="text-4xl font-bold mt-4">Got an interesting idea?</p>
+
+		<p class="mt-8">Hit me up! just sit, relax and watch your ideas become to a reaility.</p>
+
+		<p class="mt-12 flex gap-2 items-center">
+			<Icon icon="mdi:envelope" class="text-2xl" /> ravenp.dev@gmail.com
+		</p>
+	</div>
+
+	<div class="flex-1 px-4 lg:px-8 mt-20 lg:mt-0">
+		<form class="max-w-lg mx-auto space-y-8" action="">
+			<div class="flex flex-col gap-2">
+				<label for="name"> Name </label>
+				<input class="w-full py-3" id="name" type="text" placeholder="Name" />
+			</div>
+
+			<div class="flex flex-col gap-2">
+				<label for="email">Email</label>
+				<input class="w-full py-3" id="email" type="email" placeholder="Email" />
+			</div>
+
+			<div class="flex flex-col gap-2">
+				<label for="emssage">Message</label>
+				<textarea class="w-full py-3" id="emssage" placeholder="Email" rows="5" />
+			</div>
+
+			<button class="py-3 px-6 bg-cyan-500 text-cyan-50 font-medium hover:bg-cyan-600"
+				>Email Me!</button
+			>
+		</form>
+	</div>
+</section>
