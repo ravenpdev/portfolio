@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { scrollRef, scrollTo } from '$lib/actions/smoothScroll';
 	import developerImg from '$lib/assets/dev.jpg';
 	import Icon from '@iconify/svelte';
 </script>
@@ -17,13 +18,19 @@
 	</div>
 
 	<div class="mt-16 text-center">
-		<button class="border-2 p-3 hover:bg-cyan-500 hover:text-cyan-50 hover:border-cyan-500"
-			>Dig into my projects</button
+		<a
+			href="#universe"
+			use:scrollTo
+			class="border-2 p-3 hover:bg-cyan-500 hover:text-cyan-50 hover:border-cyan-500"
+			>Dig into my projects</a
 		>
 	</div>
 </section>
 
-<section class="bg-cyan-500 bg-opacity-10 flex flex-col lg:flex-row py-28 lg:py-48">
+<section
+	class="bg-cyan-500 bg-opacity-10 flex flex-col lg:flex-row py-28 lg:py-48"
+	use:scrollRef={'about'}
+>
 	<div class="flex-1">
 		<img src={developerImg} alt="" />
 	</div>
@@ -38,7 +45,7 @@
 	</div>
 </section>
 
-<section class="flex flex-col lg:flex-row py-28 lg:py-48">
+<section class="flex flex-col lg:flex-row py-28 lg:py-48" use:scrollRef={'contact'}>
 	<div class="flex-1 px-4 lg:px-8 lg:mt-20">
 		<h3 class="text-cyan-500 font-bold">CONTACT</h3>
 		<p class="text-4xl font-bold mt-4">Got an interesting idea?</p>

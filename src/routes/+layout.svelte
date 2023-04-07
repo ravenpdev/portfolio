@@ -3,6 +3,7 @@
 	import ToggleDarkButton from '$lib/components/toggle-dark/ToggleDarkButton.svelte';
 	import '../app.css';
 	import { fly } from 'svelte/transition';
+	import { scrollTo } from '$lib/actions/smoothScroll';
 
 	let showMenuOnSmallScreen = false;
 
@@ -31,10 +32,10 @@
 		<section class="backdrop-blur mb-12 fixed top-0 w-full">
 			<nav
 				class="py-8 px-4 lg:px-10"
-				class:bg-cyan-500={windowYPosition > 50}
-				class:bg-opacity-5={windowYPosition > 50}
-				class:dark:bg-cyan-900={windowYPosition > 50}
-				class:dark:bg-opacity-50={windowYPosition > 50}
+				class:bg-cyan-500={windowYPosition !== 0}
+				class:bg-opacity-5={windowYPosition !== 0}
+				class:dark:bg-cyan-900={windowYPosition !== 0}
+				class:dark:bg-opacity-50={windowYPosition !== 0}
 			>
 				<div class="flex justify-between items-center">
 					<h1 class="text-xl font-semibold tracking-wide">
@@ -45,9 +46,9 @@
 
 					<div class="hidden md:flex items-center">
 						<div class="flex gap-4 mr-8 text-sm items-center">
-							<a class="hover:underline" href="#">ABOUT</a>
-							<a class="hover:underline" href="#">WORK</a>
-							<a class="hover:underline" href="#">CONTACT</a>
+							<a class="hover:underline" href="#about" use:scrollTo>ABOUT</a>
+							<a class="hover:underline" href="#work" use:scrollTo>WORK</a>
+							<a class="hover:underline" href="#contact" use:scrollTo>CONTACT</a>
 
 							<div class="ml-4">
 								<a class="hover:text-gray-500" href="https://github.com/ravenpdev">
@@ -90,7 +91,7 @@
 
 		<slot />
 
-		<footer class="py-28 bg-cyan-700 text-cyan-50 dark:bg-cyan-500 dark:bg-opacity-20">
+		<footer class="py-28 bg-gray-900 text-gray-50 dark:bg-cyan-500 dark:bg-opacity-20">
 			<div class="flex flex-col justify-center items-center">
 				<div class="flex gap-8 items-center text-xl">
 					<a class="hover:underline" href="#">About</a>
