@@ -2,6 +2,30 @@
 	import { scrollRef, scrollTo } from '$lib/actions/smoothScroll';
 	import developerImg from '$lib/assets/dev.jpg';
 	import Icon from '@iconify/svelte';
+
+	const projects = [
+		{
+			id: 1,
+			title: 'Job Listing App',
+			description:
+				'Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.',
+			technologies: ['Sveltekit', 'TailwindCss', 'Primsa']
+		},
+		{
+			id: 2,
+			title: 'Inventory App',
+			description:
+				'Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.',
+			technologies: ['Sveltekit', 'TailwindCss', 'Primsa']
+		},
+		{
+			id: 3,
+			title: 'Task Management App',
+			description:
+				'Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.',
+			technologies: ['Sveltekit', 'TailwindCss', 'Primsa']
+		}
+	];
 </script>
 
 <section class="min-h-screen px-4 py-24">
@@ -19,7 +43,7 @@
 
 	<div class="mt-16 text-center">
 		<a
-			href="#universe"
+			href="#work"
 			use:scrollTo
 			class="border-2 p-3 hover:bg-cyan-500 hover:text-cyan-50 hover:border-cyan-500"
 			>Dig into my projects</a
@@ -45,7 +69,35 @@
 	</div>
 </section>
 
-<section class="flex flex-col lg:flex-row py-28 lg:py-48" use:scrollRef={'contact'}>
+<section id="work" class="py-28 lg:py-48">
+	<div class="overflow-x-hidden gap-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-4 md:px-8">
+		{#each projects as project, idx}
+			<div class="p-4">
+				<img class="object-fit" src={developerImg} alt="" />
+
+				<div class="mt-10">
+					<h3 class="text-2xl font-bold text-gray-500">{project.title}</h3>
+				</div>
+
+				<p class="text-sm mt-4 text-gray-500">{project.description}</p>
+
+				<div class="mt-4 flex gap-4">
+					{#each project.technologies as tech}
+						<span
+							class="py-1 px-3 bg-gray-100 hover:bg-gray-200 text-gray-500 text-sm cursor-pointer dark:bg-gray-500 dark:text-gray-300 rounded-full dark:hover:bg-gray-600"
+							>{tech}</span
+						>
+					{/each}
+				</div>
+			</div>
+		{/each}
+	</div>
+</section>
+
+<section
+	class="flex bg-violet-50 dark:bg-purple-900 dark:bg-opacity-20 flex-col lg:flex-row py-28 lg:py-48"
+	use:scrollRef={'contact'}
+>
 	<div class="flex-1 px-4 lg:px-8 lg:mt-20">
 		<h3 class="text-cyan-500 font-bold">CONTACT</h3>
 		<p class="text-4xl font-bold mt-4">Got an interesting idea?</p>
@@ -74,7 +126,7 @@
 				<textarea class="w-full py-3" id="emssage" placeholder="Email" rows="5" />
 			</div>
 
-			<button class="py-3 px-6 bg-cyan-500 text-cyan-50 font-medium hover:bg-cyan-600"
+			<button class="py-3 px-6 bg-purple-500 text-purple-50 font-medium hover:bg-purple-600"
 				>Email Me!</button
 			>
 		</form>
