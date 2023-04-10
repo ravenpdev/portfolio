@@ -72,8 +72,8 @@
 <section id="work" class="py-28 lg:py-48">
 	<div class="overflow-x-hidden gap-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-4 md:px-8">
 		{#each projects as project, idx}
-			<div class="p-4">
-				<img class="object-fit" src={developerImg} alt="" />
+			<div class="p-4 overflow-hidden group cursor-pointer">
+				<img class="object-fit group-hover:scale-125 transition-all" src={developerImg} alt="" />
 
 				<div class="mt-10">
 					<h3 class="text-2xl font-bold text-gray-500">{project.title}</h3>
