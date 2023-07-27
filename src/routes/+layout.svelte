@@ -1,6 +1,8 @@
 <script lang="ts">
 	import '../app.css';
 
+	let windowYCoordinate: number;
+
 	let activeLink = 'about';
 
 	let links = ['about', 'experience', 'projects'];
@@ -20,7 +22,19 @@
 			});
 		}
 	}
+
+	$: {
+		if (windowYCoordinate < 180) {
+			activeLink = 'about';
+		}
+
+		if (windowYCoordinate > 180) {
+			activeLink = 'experience';
+		}
+	}
 </script>
+
+<svelte:window bind:scrollY={windowYCoordinate} />
 
 <div class="bg-slate-900 font-body text-slate-400">
 	<div class="mx-auto min-h-screen max-w-screen-xl px-6 py-12 md:px-12 md:py-20 lg:px-24 lg:py-0">
