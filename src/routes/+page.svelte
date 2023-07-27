@@ -1,5 +1,6 @@
 <script lang="ts">
 	import ExpCard from '$lib/components/ExpCard.svelte';
+	import Footer from '$lib/components/Footer.svelte';
 	import Section from '$lib/components/Section.svelte';
 
 	const jobs = [
@@ -54,16 +55,9 @@
 	<Section title="about" label="About me">
 		<div>
 			<p class="mb-4">
-				Since I've been working as a backend developer from my previous jobs. My main focus these
-				days is to learn frontend framework, figma for web design. I want to build new or improve
-				existing products that uses latest technologies as much as possible.
-			</p>
-
-			<p class="mb-4">
-				<button
-					class="rounded-sm bg-teal-500 px-8 py-2 text-sm font-semibold uppercase text-teal-50 hover:bg-teal-600"
-					>Hire me</button
-				>
+				My main focus is to be a fullstack developer and build fast and scalable web applications
+				using the latest technologies. In my free time I'm also watching courses that I took on
+				udemy.
 			</p>
 		</div>
 	</Section>
@@ -76,4 +70,5 @@
 			{/each}
 		</ol>
 	</Section>
+	<Footer />
 </main>
